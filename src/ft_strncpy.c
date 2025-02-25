@@ -1,8 +1,8 @@
 #include	<stddef.h>
 
-char	*ft_strncpy(char *dst, char *src, unsigned int n)
+char	*ft_strncpy(char *dst, char *src, size_t n)
 {
-	unsigned int i;
+	size_t i;
 	
 	if(src == NULL)
 		return NULL;

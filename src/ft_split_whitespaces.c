@@ -1,7 +1,7 @@
 #include	<stdlib.h>
 
 char	*ft_strncpy(char *dst, char *src, unsigned int len);
-int	ft_check_whitespaces(char c);
+int	ft_isspace(char c);
 int	ft_strlen(char *str);
 int	ft_count_words(char *str);
 //----------prototype-----------------------
@@ -20,11 +20,11 @@ char	**ft_split_whitespaces(char *str)
 	i = 0;
 	while( str[i] )
 	{
-		if(ft_check_whitespaces(str[i]) == 1)
+		if(ft_isspace(str[i]) == 1)
 		{
 			count_s = 0;
 			start_s = i;
-			while(ft_check_whitespaces(str[i]) == 1 && str[i])
+			while(ft_isspace(str[i]) == 1 && str[i])
 			{
 				count_s++;
 				i++;
