@@ -1,32 +1,37 @@
-#include	<stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+size_t	ft_strlen(char *str);
+int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int i, j, sub_s;
-	
-	if(str == NULL)
-		return NULL;
-	else if(to_find == NULL)
-		return str;
+	int	i;
+	int	j;
+	int	sub_s;
+
+	if (!str)
+		return (NULL);
+	else if (!to_find)
+		return (str);
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		j = 0;
-		if(str[i] == to_find[j])
+		if (str[i] == to_find[0])
 		{
-			sub_s = i;
-			while(to_find[j])
-			{
-				if(to_find[j] == str[sub_s])
-					sub_s++;
-				else
-					break;
-				j++;
-			}
-			if(to_find[j] == '\0')
+			if (ft_strncmp((str + i), to_find, ft_strlen(to_find)) == 0)
 				return (str + i);
 		}
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }

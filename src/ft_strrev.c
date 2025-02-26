@@ -1,22 +1,31 @@
-#include	<stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *);
-void	ft_swap(char *, char *);
+void	ft_swap(char *a, char *b);
+int	ft_strlen(char *str);
 
 char	*ft_strrev(char *str)
 {
-	int i, len ;
-	
-	if(str == NULL)
-		return NULL ;
-	
-	len = ft_strlen(str) ;
-	i = 0 ;
-	while(i < (len / 2) )
+	int	i;
+	int	len;
+
+	if (!str)
+		return (NULL);
+	len = ft_strlen(str);
+	i = 0;
+	while (i < (len / 2))
 	{
 		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++ ;
+		i++;
 	}
-	
 	return (str);
 }

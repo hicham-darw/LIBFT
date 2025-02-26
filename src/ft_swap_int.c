@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap_int.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 void	ft_swap_int(int	*a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *(a);
 	*(a) = *(b);
