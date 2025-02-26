@@ -1,13 +1,25 @@
-#include	<string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
 
 void	ft_bzero(void *restrict str, size_t n)
 {
-	char *tmp;
-	size_t i;
+	char	*tmp;
+	size_t	i;
 
-	tmp = (char*)str;
+	tmp = (char *)str;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		tmp[i] = '\0';
 		i++;
