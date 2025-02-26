@@ -1,33 +1,37 @@
-#include	<stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char*);
+#include <stddef.h>
+
+int	ft_strlen(char *str);
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i , j;
-	if(src == NULL)
-		return NULL;
-	if(dest == NULL)
-	{
-		i = 0;
-		while(src[i])
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
+	int	i;
+	int	j;
+
+	if (!src || !dest)
+		return (NULL);
+	if (dest[0] == '\0')
+		j = 0;
 	else
-	{
-		i = 0;
 		j = ft_strlen(dest);
-		while(src[i])
-		{
-			dest[j] = src[i];
-			j++;
-			i++;
-		}
-		dest[j] = '\0';	
+	i = 0;
+	while (src[i])
+	{
+		dest[j] = src[i];
+		j++;
+		i++;
 	}
+	dest[j] = '\0';
 	return (dest);
 }

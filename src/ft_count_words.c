@@ -20,7 +20,7 @@ int	ft_count_words(char *str)
 	int	count;
 
 	if (str == NULL)
-		return (-1);
+		return (0);
 	count = 0;
 	i = 0;
 	while (str[i])

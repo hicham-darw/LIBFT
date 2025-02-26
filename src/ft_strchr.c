@@ -1,12 +1,27 @@
-#include	<string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
+/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
 
 const char	*ft_strchr(const char *str, int c)
 {
-	while(*str)
+	while (*str)
 	{
-		if(*str == (unsigned char)c)
-			return str;
+		if (*str == (unsigned char)c)
+			return (str);
 		str++;
 	}
-	return (c == '\0') ? str: NULL;
+	if (c == '\0')
+		return (str);
+	else
+		return (NULL);
 }
