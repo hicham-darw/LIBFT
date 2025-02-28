@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,24 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
-char	*ft_strrev(char *str)
+void	del(void *content, size_t size);
+
+void	ft_lstdelone(t_list **alst, void (*del)(void *content, size_t size))
 {
-	int	i;
-	int	len;
+	if (!alst || !del)
+		return ;
+	del ((*alst)->content, ft_strlen((char *)(*alst)->content));
+	free(*alst);
+	(*alst) = NULL;
+}
 
-	if (!str)
-		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
-	}
-	return (str);
+void	del(void *content, size_t size)
+{
+	if (!content)
+		return ;
+	(void)size;
+	ft_memdel(&content);
 }

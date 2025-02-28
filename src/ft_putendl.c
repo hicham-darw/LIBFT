@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,13 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
-size_t	ft_strlen(char *str);
+#include <unistd.h>
 
-char	*ft_strrev(char *str)
+void	ft_putstr(char const *str);
+
+void	ft_putendl(char const *str)
 {
-	int	i;
-	int	len;
-
-	if (!str)
-		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
-	}
-	return (str);
+	ft_putstr(str);
+	ft_putstr("\n");
 }

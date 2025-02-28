@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,22 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
 size_t	ft_strlen(char *str);
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strcat(char *dest, char *src);
+char	*ft_strnew(size_t size);
 
-char	*ft_strrev(char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	len;
+	char	*ptr;
 
-	if (!str)
+	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
-	}
-	return (str);
+	ptr = ft_strnew(ft_strlen((char *)s1) + ft_strlen((char *)s2));
+	if (!ptr)
+		return (NULL);
+	ft_strcpy(ptr, (char *)s1);
+	ft_strcat(ptr, (char *)s2);
+	return (ptr);
 }

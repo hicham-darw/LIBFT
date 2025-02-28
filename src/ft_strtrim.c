@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,37 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
 size_t	ft_strlen(char *str);
+char	*ft_strnew(size_t size);
+char	*ft_strncpy(char *dest, char *src, unsigned int len);
+int	ft_isspace(int c);
 
-char	*ft_strrev(char *str)
+char	*ft_strtrim(char const *s)
 {
-	int	i;
-	int	len;
+	char	*ptr;
+	size_t	i;
+	size_t	len;
+	size_t	start;
+	size_t	last;
 
-	if (!str)
+	if (!s)
 		return (NULL);
-	len = ft_strlen(str);
+	len = ft_strlen((char *)s);
 	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
+	while (ft_isspace(s[i]) == 1 && s[i])
 		i++;
+	start = i;
+	last = 0;
+	while (ft_isspace(s[len - 1]) == 1 && len - 1 >= 0)
+	{
+		last++;
+		len--;
 	}
-	return (str);
+	len = ft_strlen((char *)s) - (start + last);
+	ptr = ft_strnew(len);
+	if (!ptr)
+		return (NULL);
+	ft_strncpy(ptr, (char *)(s + start), len);
+	return (ptr);
 }

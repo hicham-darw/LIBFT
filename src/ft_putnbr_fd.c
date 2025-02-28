@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,12 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <unistd.h>
 
-void	ft_swap(char *a, char *b);
 size_t	ft_strlen(char *str);
+char	*ft_itoa(int n);
 
-char	*ft_strrev(char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	int	len;
-
-	if (!str)
-		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
-	}
-	return (str);
+	write(fd, ft_itoa(n), ft_strlen(ft_itoa(n)));
 }

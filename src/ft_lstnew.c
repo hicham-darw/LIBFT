@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,19 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
-char	*ft_strrev(char *str)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	int	i;
-	int	len;
+	t_list	*new;
 
-	if (!str)
+	new = (t_list *)ft_memalloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
-	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
-	}
-	return (str);
+	new->content = (void *)content;
+	if (content)
+		new->content_size = content_size;
+	new->next = NULL;
+	return (new);
 }

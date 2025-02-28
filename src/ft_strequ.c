@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,21 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-void	ft_swap(char *a, char *b);
 size_t	ft_strlen(char *str);
 
-char	*ft_strrev(char *str)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int	i;
-	int	len;
+	unsigned int	i;
 
-	if (!str)
-		return (NULL);
-	len = ft_strlen(str);
+	if (ft_strlen((char *)s1) != ft_strlen((char *)s2))
+		return (0);
 	i = 0;
-	while (i < (len / 2))
+	while (s1[i] || s2[i])
 	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
 	}
-	return (str);
+	return (1);
 }

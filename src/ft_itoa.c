@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,22 +11,35 @@
 /* ************************************************************************** */
 #include <stddef.h>
 
-void	ft_swap(char *a, char *b);
-size_t	ft_strlen(char *str);
+size_t	ft_nbrlen(int n);
+char	*ft_strnew(size_t size);
+char	*ft_strrev(char *str);
 
-char	*ft_strrev(char *str)
+char	*ft_itoa(int n)
 {
-	int	i;
-	int	len;
+	char	*ptr;
+	size_t	len;
+	size_t	i;
+	char	sign;
 
-	if (!str)
+	len = ft_nbrlen(n);
+	ptr = ft_strnew(len);
+	if (!ptr)
 		return (NULL);
-	len = ft_strlen(str);
-	i = 0;
-	while (i < (len / 2))
+	sign = '\0';
+	if (n < 0)
 	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
-		i++;
+		n *= -1;
+		sign = '-';
 	}
-	return (str);
+	i = 0;
+	while (i < (len) && n >= 10)
+	{
+		ptr[i] = (n % 10) + 48;
+		i++;
+		n /= 10;
+	}
+	ptr[i] = n + 48;
+	ptr[i + 1] = sign;
+	return (ft_strrev(ptr));
 }

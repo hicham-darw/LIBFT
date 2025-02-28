@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,24 +9,26 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <stdlib.h>
 
-void	ft_swap(char *a, char *b);
+char	*ft_strnew(size_t size);
 size_t	ft_strlen(char *str);
 
-char	*ft_strrev(char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	len;
+	char	*ptr;
+	size_t	i;
 
-	if (!str)
+	if (!s)
 		return (NULL);
-	len = ft_strlen(str);
+	ptr = ft_strnew(ft_strlen((char *)s));
+	if (!ptr)
+		return (NULL);
 	i = 0;
-	while (i < (len / 2))
+	while (s[i])
 	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
+		ptr[i] = (f)((unsigned int)i, s[i]);
 		i++;
 	}
-	return (str);
+	return (ptr);
 }
