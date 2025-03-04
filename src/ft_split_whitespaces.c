@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-char	**ft_fill_vector_str(char **vector, char *str);
-int	ft_count_words(char *str);
-//----------prototype-----------------------
+#include "libft.h"
 
 char	**ft_split_whitespaces(char *str)
 {

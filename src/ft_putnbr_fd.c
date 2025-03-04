@@ -9,10 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-size_t	ft_strlen(char *str);
-char	*ft_itoa(int n);
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -9,8 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 int	ft_strequ(char const *s1, char const *s2)
 {

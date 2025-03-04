@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void	ft_capital_char(char j, char *i)
 {
 	if(j >= 'A' && j <= 'Z')

@@ -9,16 +9,11 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-size_t	ft_strlen(char *str);
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
+#include "libft.h"
 
 char	*ft_strnstr(char *str, char *to_find, unsigned int n)
 {
-	char	*ptr;
 	unsigned int	i;
-	unsigned int	j;
-	unsigned int	cmp;
 
 	if (!to_find)
 		return (str);

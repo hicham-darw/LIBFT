@@ -9,8 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	ft_putstr(char *str);
+#include "libft.h"
 
 void	ft_print_words_tables(char **tab)
 {

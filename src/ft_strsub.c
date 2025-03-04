@@ -9,11 +9,9 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strnew(size_t size);
-char	*ft_strncpy(char *dest, char *src, size_t len);
-
-char	*ft_strsub(char const*s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 

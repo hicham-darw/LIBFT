@@ -9,8 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char *str);
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

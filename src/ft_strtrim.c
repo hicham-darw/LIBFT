@@ -9,11 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-size_t	ft_strlen(char *str);
-char	*ft_strnew(size_t size);
-char	*ft_strncpy(char *dest, char *src, unsigned int len);
-int	ft_isspace(int c);
+#include "libft.h"
 
 char	*ft_strtrim(char const *s)
 {
@@ -31,7 +27,7 @@ char	*ft_strtrim(char const *s)
 		i++;
 	start = i;
 	last = 0;
-	while (ft_isspace(s[len - 1]) == 1 && len - 1 >= 0)
+	while (ft_isspace(s[len - 1]) == 1 && (int)(len - 1) >= 0)
 	{
 		last++;
 		len--;

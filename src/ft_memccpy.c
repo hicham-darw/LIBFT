@@ -1,4 +1,4 @@
-#include	<string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *restrict dest, void *restrict src, int c, size_t n)
 {

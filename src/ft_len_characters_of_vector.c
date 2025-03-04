@@ -9,8 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char *str);
+#include "libft.h"
 
 int	ft_len_characters_of_vector(int argc, char **argv)
 {

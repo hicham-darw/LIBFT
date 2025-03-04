@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_len_characters_of_vector(int argc, char **argv);
-size_t	ft_strlen(char *str);
-char	*ft_strcpy(char *dst, char *src);
-char	*ft_strcat(char *dst, char *src);
+#include "libft.h"
 
 char	*ft_concat_params(int argc, char **argv)
 {
@@ -29,7 +24,7 @@ char	*ft_concat_params(int argc, char **argv)
 	ptr = (char *)malloc(sizeof(char) * len);
 	if (!ptr)
 		return (NULL);
-	while (i < argc && argv[i])
+	while ((int)i < argc && argv[i])
 	{
 		if (i == 0)
 			ft_strcpy(ptr, argv[i]);

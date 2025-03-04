@@ -9,12 +9,14 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
-	while ((size_t)i < n && (s1[i] || s2[i]))
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
 			return (0);

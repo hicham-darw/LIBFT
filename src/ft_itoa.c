@@ -9,11 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-
-size_t	ft_nbrlen(int n);
-char	*ft_strnew(size_t size);
-char	*ft_strrev(char *str);
+#include "libft.h"
 
 char	*ft_itoa(int n)
 {

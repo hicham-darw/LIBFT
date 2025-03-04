@@ -9,7 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(void *str1, void *str2, size_t n)
 {
@@ -22,7 +22,7 @@ int	ft_memcmp(void *str1, void *str2, size_t n)
 	tmp_str2 = (char *)str2;
 	i = n - 1;
 	res = 0;
-	while (i >= 0)
+	while ((int)i >= 0)
 	{
 		res = res + tmp_str1[i] - tmp_str2[i];
 		i--;

@@ -9,8 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

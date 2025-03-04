@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	ft_capital_char(char j, char *i);
+#include "libft.h"
 
 char	*ft_strcapitalize(char	*str)
 {

@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_isspace(int c);
-char	*ft_strncpy(char *dest, char *src, size_t n);
 int	ft_count_word(char *str);
 
 char	**ft_fill_vector_str(char **vec, char *str)

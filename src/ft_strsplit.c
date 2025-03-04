@@ -9,14 +9,10 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_count_len(char *str, char c);
-char	*ft_strnew(size_t size);
-char	*ft_strncpy(char *dest, char *src, unsigned int len);
 char	**ft_fill_vec(char **vec, char *s, char c, size_t len);
-void	ft_print_words_tables(char **tab);
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -37,7 +33,6 @@ size_t	ft_count_len(char *str, char c)
 {
 	size_t	i;
 	size_t	count;
-	size_t	b;
 
 	if (!str)
 		return (0);

@@ -9,11 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-size_t	ft_strlen(char *str);
-char	*ft_strcpy(char *dest, char *src);
-char	*ft_strcat(char *dest, char *src);
-char	*ft_strnew(size_t size);
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

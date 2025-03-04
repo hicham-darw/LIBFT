@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	ft_isspace(char c);
+#include "libft.h"
 
 int	ft_count_words(char *str)
 {

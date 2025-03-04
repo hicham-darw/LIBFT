@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strncpy(char *dest, char *src, size_t n);
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -27,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = n - 1;
-		while (i >= 0)
+		while ((int)i >= 0)
 		{
 			tmp_dest[i] = tmp_src[i];
 			i--;

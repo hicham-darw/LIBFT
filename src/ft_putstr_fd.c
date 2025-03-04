@@ -9,9 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

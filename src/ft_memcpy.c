@@ -9,6 +9,8 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
 	char	*tmp_dest;

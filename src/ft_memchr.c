@@ -9,7 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(void *str, int c, size_t n)
 {

@@ -9,6 +9,8 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 int	ft_find_next_prime(int nb)
 {
 	int	i;

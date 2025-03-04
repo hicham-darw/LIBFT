@@ -9,10 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-
-void	ft_swap(char *a, char *b);
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 char	*ft_strrev(char *str)
 {

@@ -9,10 +9,9 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	ft_swap_int(int *x, int *y);
-
-void	ft_rev_integer_table(int *tab, int size)
+void	ft_sort_integer_table_big(int *tab, int size)
 {
 	int	i;
 	int	j;

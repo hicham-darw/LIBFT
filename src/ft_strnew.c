@@ -9,10 +9,7 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-void	*ft_memalloc(size_t n);
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {

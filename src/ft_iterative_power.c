@@ -9,6 +9,8 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 int	ft_iterative_power(int nb, int power)
 {
 	int	i;
