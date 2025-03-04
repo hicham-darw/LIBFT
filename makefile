@@ -14,3 +14,9 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) $< -o $@ -I includes/
+clean:
+	rm -rf $(OBJ_DIR)/*.o $(OBJ_DIR)
+fclean: clean 
+	rm -rf libft.a
+re: fclean $(LIB)
+all: $(LIB)

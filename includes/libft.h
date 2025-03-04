@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <fcntl.h>
 
 #define INTMIN -2147483648
 #define INTMAX 2147483647
@@ -14,6 +15,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }	t_list;
 
+int	ft_atoi(char *str);
 int	ft_check_overflow(unsigned int res, char c, int sign);
 void	ft_bzero(void *restrict str, size_t n);
 void	ft_capital_char(char j, char *i);
