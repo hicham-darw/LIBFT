@@ -9,19 +9,18 @@
 /*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-const char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
 		if (*str == (unsigned char)c)
-			return (str);
+			return (char *)str;
 		str++;
 	}
 	if (c == '\0')
-		return (str);
+		return (char *)str;
 	else
 		return (NULL);
 }
