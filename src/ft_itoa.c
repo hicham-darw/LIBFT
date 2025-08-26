@@ -1,41 +1,51 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stdlib.h>
+
+static size_t	nbrlen(int n)
+{
+	size_t	i;
+
+	if (n == 0)
+		return (1);
+	i = 0;
+	if (n < 0)
+		i += 1;
+	while (n)
+	{
+		i += 1;
+		n /= 10;
+	}
+	return (i);
+}
+
+static int	absolute(int x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}
 
 char	*ft_itoa(int n)
 {
 	char	*ptr;
 	size_t	len;
-	size_t	i;
-	char	sign;
 
-	len = ft_nbrlen(n);
-	ptr = ft_strnew(len);
+	len = nbrlen(n);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	sign = '\0';
-	if (n < 0)
+	ptr[len] = '\0';
+	if (n == 0)
 	{
-		n *= -1;
-		sign = '-';
+		ptr[0] = 48;
+		return (ptr);
 	}
-	i = 0;
-	while (i < (len) && n >= 10)
+	if (n < 0)
+		ptr[0] = '-';
+	while (n)
 	{
-		ptr[i] = (n % 10) + 48;
-		i++;
+		ptr[len - 1] = absolute(n % 10) + 48;
+		len--;
 		n /= 10;
 	}
-	ptr[i] = n + 48;
-	ptr[i + 1] = sign;
-	return (ft_strrev(ptr));
+	return (ptr);
 }

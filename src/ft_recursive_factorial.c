@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-
 int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0 || nb > 12)

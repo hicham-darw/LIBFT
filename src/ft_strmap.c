@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
@@ -18,7 +7,10 @@ char	*ft_strmap(char const *s, char (*f)(char))
 
 	if (!s)
 		return (NULL);
-	ptr = ft_strnew(ft_strlen((char *)s));
+	i = 0;
+	while (s[i])
+		i++;
+	ptr = (char *)malloc(sizeof(char) * (i + 1));
 	if (!ptr)
 		return (NULL);
 	i = 0;

@@ -1,41 +1,89 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strtrim(char const *s)
+static int	ft_isset(char const *set, char c)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static char	*empty_str(void)
 {
 	char	*ptr;
-	size_t	i;
-	size_t	len;
-	size_t	start;
-	size_t	last;
 
-	if (!s)
-		return (NULL);
-	len = ft_strlen((char *)s);
-	i = 0;
-	while (ft_isspace(s[i]) == 1 && s[i])
-		i++;
-	start = i;
-	last = 0;
-	while (ft_isspace(s[len - 1]) == 1 && (int)(len - 1) >= 0)
-	{
-		last++;
-		len--;
-	}
-	len = ft_strlen((char *)s) - (start + last);
-	ptr = ft_strnew(len);
+	ptr = (char *)malloc(1);
 	if (!ptr)
 		return (NULL);
-	ft_strncpy(ptr, (char *)(s + start), len);
+	ptr[0] = '\0';
+	return (ptr);
+}
+
+static char	*ft_strdup(char const *str)
+{
+	char	*ptr;
+	int		len_s;
+	int		i;
+
+	len_s = 0;
+	while (str[len_s])
+		len_s++;
+	ptr = (char *)malloc(sizeof(char) * (len_s + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		ptr[i] = str[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+static size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*ptr;
+	int		start;
+	int		last;
+	int		i;
+
+	if (!s1)
+		return (NULL);
+	if (!set || !*set)
+		return (ft_strdup(s1));
+	last = (int)ft_strlen(s1);
+	start = 0;
+	while (s1[start] && ft_isset(set, s1[start]))
+		start++;
+	while ((last - 1) >= start && ft_isset(set, s1[last - 1]))
+		last--;
+	if (start >= last)
+		return (empty_str());
+	ptr = (char *)malloc(sizeof(char) * ((last - start) + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (s1[start] && start < last)
+		ptr[i++] = s1[start++];
+	ptr[i] = '\0';
 	return (ptr);
 }

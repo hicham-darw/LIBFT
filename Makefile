@@ -20,3 +20,5 @@ fclean: clean
 	rm -rf libft.a
 re: fclean $(LIB)
 all: $(LIB)
+
+.PHONY: clean fclean re all

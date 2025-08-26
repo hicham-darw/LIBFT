@@ -1,27 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stddef.h>
 
-#include "libft.h"
-
-void	ft_bzero(void *restrict str, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
-	char	*tmp;
 	size_t	i;
+	char	*tmp_s;
 
-	tmp = (char *)str;
+	tmp_s = (char *)str;
 	i = 0;
 	while (i < n)
-	{
-		tmp[i] = '\0';
-		i++;
-	}
+		tmp_s[i++] = '\0';
 }

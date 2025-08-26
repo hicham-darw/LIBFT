@@ -1,35 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*tmp_dest;
-	char	*tmp_src;
-	size_t	i;
+	char	*d;
+	char	*s;
 
-	tmp_dest = (char *)dest;
-	tmp_src = (char *)src;
-	if (&tmp_src < &tmp_dest)
-		ft_strncpy(tmp_dest, tmp_src, n);
+	if (!dest || !src || dest == src)
+		return (dest);
+	d = (char *)dest;
+	s = (char *)src;
+	if (s < d)
+	{
+		d += n;
+		s += n;
+		while (n--)
+			*(--d) = *(--s);
+	}
 	else
 	{
-		i = n - 1;
-		while ((int)i >= 0)
-		{
-			tmp_dest[i] = tmp_src[i];
-			i--;
-		}
+		while (n--)
+			*(d++) = *(s++);
 	}
 	return (dest);
 }

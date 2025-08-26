@@ -1,29 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-
-char	*ft_strrchr(char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
-	size_t	i;
+	char	*p;
+	char	*tmp;
 
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (str[i])
+	p = (char *)s;
+	tmp = 0;
+	while (*p)
 	{
-		if (str[i] == (unsigned char)c)
-			ptr = &str[i];
-		str++;
+		if (*p == c)
+			tmp = p;
+		p++;
 	}
-	return (ptr);
+	if (*p == c)
+		tmp = p;
+	return (tmp);
 }

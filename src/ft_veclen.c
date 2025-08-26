@@ -1,11 +1,11 @@
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_veclen(char **vec)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
-	while(vec[i])
+	while (vec[i])
 		i++;
-	return i;
+	return (i);
 }

@@ -1,28 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-
 char	*ft_strrev(char *str)
 {
+	char	tmp;
 	int	i;
 	int	len;
 
 	if (!str)
-		return (NULL);
-	len = ft_strlen(str);
+		return (0);
+	len = 0;
+	while (str[len])
+		len++;
 	i = 0;
 	while (i < (len / 2))
 	{
-		ft_swap(&str[i], &str[(len - 1) - i]);
+		tmp = str[i];
+		str[i] = str[(len - 1) - i];
+		str[(len - 1) - i] = tmp;
 		i++;
 	}
 	return (str);

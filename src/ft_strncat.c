@@ -1,34 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
-char	*ft_strncat(char *dest, char *src, int nb)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int	i;
-	int	k;
+	size_t	len_dest;
+	size_t	i;
 
-	if (!dest || !src)
-		return (NULL);
-	if (dest[0] == '\0')
-		i = 0;
-	else
-		i = ft_strlen(dest);
-	k = 0;
-	while (k < nb && src[k])
+	len_dest = 0;
+	while (dest[len_dest])
+		len_dest++;
+	i = 0;
+	while (src[i] && i < n)
 	{
-		dest[i] = src[k];
-		k++;
+		dest[i + len_dest] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i + len_dest] = '\0';
 	return (dest);
 }

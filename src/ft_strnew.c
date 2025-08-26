@@ -1,24 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {
 	char	*ptr;
+	size_t	i;
 
-	ptr = (char *)ft_memalloc(size + 1);
-	ptr[size] = '\0';
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
 	if (!ptr)
 		return (NULL);
-	else
-		return (ptr);
+	i = 0;
+	while (i <= size)
+		ptr[i++] = '\0';
+	return (ptr);
 }

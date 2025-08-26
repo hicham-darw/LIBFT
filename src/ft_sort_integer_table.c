@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-
 void	ft_sort_integer_table(int *tab, int size)
 {
+	int	tmp;
 	int	i;
 	int	j;
 
@@ -20,10 +8,14 @@ void	ft_sort_integer_table(int *tab, int size)
 	while (i < (size - 1))
 	{
 		j = i + 1;
-		while (j < (size - 1))
+		while (j < size)
 		{
 			if (tab[i] > tab[j])
-				ft_swap_int(&tab[i], &tab[j]);
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
 			j++;
 		}
 		i++;

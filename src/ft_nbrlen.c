@@ -1,21 +1,24 @@
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_nbrlen(int n)
 {
 	size_t	len;
+	unsigned int	nbr;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	if (n < 0)
 	{
-		n *= (-1);
+		nbr = -n;
 		len = 1;
 	}
-	if (n >= 0 && n <= 9)
-		return (1);
-	while (n >= 10)
+	else
+		nbr = n;
+	while (nbr)
 	{
 		len++;
-		n /= 10;
+		nbr /= 10;
 	}
-	return (len + 1);
+	return (len);
 }

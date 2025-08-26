@@ -1,28 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*tmp_dest;
-	char	*tmp_src ;
 	size_t	i;
+	char	*tmp_d;
+	char	*tmp_s;
 
-	tmp_dest = (char *)dest;
-	tmp_src = (char *)src;
+	tmp_d = (char *)dest;
+	tmp_s = (char *)src;
 	i = 0;
 	while (i < n)
 	{
-		tmp_dest[i] = tmp_src[i];
+		tmp_d[i] = tmp_s[i];
 		i++;
 	}
 	return (dest);

@@ -1,33 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elhahicham <hachemdarwin@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: YYYY/MM/DD HH:MM:SS by elhahicham        #+#    #+#             */
-/*   Updated: YYYY/MM/DD HH:MM:SS by elhahicham       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
-char	*ft_strnstr(char *str, char *to_find, unsigned int n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	j;
+	char	*big;
 
-	if (!to_find)
-		return (str);
-	if (!str)
-		return (NULL);
+	big = (char *)haystack;
+	if (*needle == '\0')
+		return (big);
 	i = 0;
-	while (i < n && str[i])
+	while (big[i] && i < n)
 	{
-		if (str[i] == to_find[0])
-		{
-			if (ft_strncmp((str + i), to_find, ft_strlen(to_find)) == 0)
-				return (str + i);
-		}
+		j = 0;
+		while (big[i + j] && needle[j] && (i + j) < n
+			&& big[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return (big + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
