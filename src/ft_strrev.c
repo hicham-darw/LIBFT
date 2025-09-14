@@ -1,8 +1,8 @@
 char	*ft_strrev(char *str)
 {
 	char	tmp;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	if (!str)
 		return (0);

@@ -2,8 +2,8 @@
 
 size_t	ft_nbrlen(int n)
 {
-	size_t	len;
-	unsigned int	nbr;
+	size_t			len;
+	unsigned int nbr;
 
 	if (n == 0)
 		return (1);
@@ -22,3 +22,4 @@ size_t	ft_nbrlen(int n)
 	}
 	return (len);
 }
+
