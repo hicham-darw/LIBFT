@@ -8,7 +8,7 @@ static size_t	len_buffer(va_list list, int count)
 
 	i = 0;
 	ret = 0;
-	while(i < count)
+	while (i < count)
 	{
 		ret += ft_strlen(va_arg(list, char *));
 		i++;

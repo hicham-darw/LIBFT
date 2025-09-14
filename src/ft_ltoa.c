@@ -3,7 +3,7 @@
 static unsigned int	ft_longlen(long n)
 {
 	unsigned int	len;	
-	long long	nbr;
+	long long		nbr;
 
 	if (n == 0)
 		return (1);
@@ -25,7 +25,7 @@ static unsigned int	ft_longlen(long n)
 
 char	*ft_ltoa(long n)
 {
-	char	*ptr;
+	char			*ptr;
 	unsigned int	len;
 
 	len = ft_longlen(n);

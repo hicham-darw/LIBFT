@@ -1,4 +1,3 @@
- 
 int	ft_nbrlen_hexa(unsigned int n)
 {
 	int	len;

@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-size_t	ft_nbrlen_unsigned(unsigned int  n)
+size_t	ft_nbrlen_unsigned(unsigned int n)
 {
 	size_t			len;
 
