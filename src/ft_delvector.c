@@ -1,11 +1,11 @@
 #include <stdlib.h>
 
-void	ft_delvector(char **vec)
+char	**ft_delvector(char **vec)
 {
 	int	i;
 
 	if (!vec || !*vec)
-		return ;
+		return (NULL);
 	i = 0;
 	while (vec[i])
 	{
@@ -15,4 +15,5 @@ void	ft_delvector(char **vec)
 	}
 	free(vec);
 	vec = NULL;
+	return (vec);
 }

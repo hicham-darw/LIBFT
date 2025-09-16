@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	char	**vec;
 	size_t	len_vec;
 
-	if (!s)
+	if (!s || !*s)
 		return (NULL);
 	len_vec = vector_len(s, c);
 	vec = (char **)malloc(sizeof(char *) * (len_vec + 1));

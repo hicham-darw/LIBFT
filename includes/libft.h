@@ -12,10 +12,10 @@ typedef struct s_list
 }	t_list;
 
 int		ft_atoi(char *str);
-void	ft_bzero(void *restrict str, size_t n);
+void	ft_bzero(void *str, size_t n);
 void	*ft_calloc(size_t n_bytes, size_t size);
 int		ft_count_words(char *str);
-void	ft_delvector(char **vec);
+char	*ft_delvector(char **vec);
 void	ft_div_mod(int a, int b, int *div, int *mod);
 int		ft_fibonacci(int index);
 int		ft_find_next_prime(int nb);
@@ -28,7 +28,7 @@ int		ft_isprime(int nb);
 int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_iterative_power(int nb, int power);
-int		ft_nbrlen_hexa(unsigned int);
+int		ft_nbrlen_hexa(unsigned int decimal);
 char	*ft_itoa(int n);
 void	ft_lstadd_back(t_list **lst, t_list *neww);
 void	ft_lstadd_front(t_list **lst, t_list *neww);
@@ -72,7 +72,6 @@ char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(char const *s1, char const *s2);
 char	*ft_strcpy(char *dest, const char *src);
 void	ft_swap_int(int *x, int *y);
-
 void	ft_strdel(char **as);
 char	*ft_strdup(const char *str);
 int		ft_strequ(char const *s1, char const *s2);

@@ -30,7 +30,6 @@ char	*ft_multi_join(int count, ...)
 	ptr = (char *)ft_memalloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, len);
 	i = 0;
 	while (i < count)
 	{
