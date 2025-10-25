@@ -38,3 +38,11 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re bonus
+
+#check if libft older than bonus_objects
+	@if [ $(NAME) -ot $(BONUS_OBJ) ]; then \
+		ar rcs $(NAME) $(OBJ) $(BONUS_OBJ); \
+		echo "✨ libft.a updated with bonus"; \
+	else \
+		echo "💡 libft.a is already up to date"; \
+	fi
